@@ -8,17 +8,18 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
   def make_assertions(title)
     assert_response :success
-    assert_select "title", "#{title} | #{@base_title}"
+    title += title.empty? ? "" : " | "
+    assert_select "title", "#{title}#{@base_title}"
   end
 
   test "should get root" do
     get root_url 
-    make_assertions("Home")
+    make_assertions("")
   end
   
   test "should get home" do
     get static_pages_home_url
-    make_assertions("Home")
+    make_assertions("")
   end
 
   test "should get help" do

@@ -23,17 +23,17 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get help" do
-    get static_pages_help_url
+    get help_url
     make_assertions("Help")
   end
 
   test "should get about" do
-    get static_pages_about_url
+    get about_url
     make_assertions("About")
   end
 
   test "should get contact" do
-    get static_pages_contact_url
+    get contact_url
     make_assertions("Contact")
   end
 
